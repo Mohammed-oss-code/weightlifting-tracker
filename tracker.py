@@ -25,8 +25,12 @@ while True:
         print("Workout added.")
 
     elif choice == "2":
-        for workout in workouts:
-            print(workout)
+        if not workouts:
+            print("No workouts saved yet.")
+        else:
+            print("\nSaved Workouts:")
+            for i, workout in enumerate(workouts, start=1):
+                print(f"{i}. {workout['exercise']} - {workout['sets']} sets x {workout['reps']} reps at {workout['weight']} lbs")
 
     elif choice == "3":
         print("Goodbye.")
